@@ -23,20 +23,6 @@ function div(num1, num2){
 };
 
 function operate(){
-    /*num1Str = prompt("First number?");
-    num1 = Number(num1Str);
-    userInput = prompt("Operator?");
-    num2Str = prompt("Second number?");
-    num2 = Number(num2Str);*/
-    /*if (userInput == "+"){
-       panel.textContent = add(number1, number2);
-    } else if (userInput == "-"){
-        panel.textContent = sub(number1, number2);
-    } else if (userInput == "*"){
-        panel.textContent = mul(number1, number2);
-    } else if (userInput == "/"){
-        panel.textContent = div(number1, number2);
-    };*/
     switch (userInput){
         case "+":
             panel.textContent = add(number1, number2);
@@ -76,6 +62,7 @@ let substract = document.querySelector('.sub');
 let multiply  = document.querySelector('.mul');
 let divide    = document.querySelector('.div');
 let result    = document.querySelector('.result');
+let dot       = document.querySelector('.dot');
 
 c.addEventListener('click', () => {
     number1 = '';
@@ -93,7 +80,7 @@ adding.addEventListener('click', () => {
     
 });
 substract.addEventListener('click', () => {
-    if (userInput !== ''){
+    if (userInput !== '' && number1 !== ''){
         operate();
     }
     userInput = '-';
@@ -117,8 +104,14 @@ divide.addEventListener('click', () => {
     panel.textContent = number1 + " / ";
 });
 result.addEventListener('click', () =>{
+    if (panel.textContent = number1){
+        operate();
+        number2 = 0;
+    } else {
     operate();
+    number2 = 0;
     panel.textContent = number1;
+    }
 });
 bt1.addEventListener('click', () => {
     if (userInput == ''){
